@@ -29,3 +29,11 @@
 .navbar-nav.pull-xs-right {
   float: right;
 }
+
+.modal-hide {
+  display: none;
+}
+
+.modal-show {
+  display: block;
+}
