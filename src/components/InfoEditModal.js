@@ -26,17 +26,21 @@ class InfoEditModal extends React.Component {
     // }
 
     render() {
-        // let modalClass = this.props.addNew ?  "modal fade modal-show" : "modal fade modal-hide";
+        let modalClass = this.props.addNew ?  "modal-container modal-show" : "modal-container modal-hide";
         return (
-            <div className="modal fade">
+            <div className={modalClass}>
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
                     <button type="button" className="close" >&times;</button>
-                    <h4 className="modal-title">Modal Header</h4>
+                    <h4 className="modal-title">ARTICLE</h4>
                   </div>
                   <div className="modal-body">
-                    <p>Some text in the modal.</p>
+                    <p>Title</p>
+                    <input type='text' className="data-entry" required/>
+                    <br></br>
+                    <p>Description</p>
+                    <textarea className="data-entry" required/>
                   </div>
                   <div className="modal-footer">
                     <button type="button" className="btn btn-default" >Save</button>

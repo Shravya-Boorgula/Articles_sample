@@ -31,9 +31,34 @@
 }
 
 .modal-hide {
-  display: none;
+  display: none !important;
 }
 
 .modal-show {
-  display: block;
+  display: block !important;
 }
+
+.modal-container {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(209, 209, 209, 0.4); /* Black w/ opacity */
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  text-align: left;
+}
+
+.modal-container p {
+  font-weight: bold;
+}
+
+.modal-container .data-entry {
+  width: 100%;
+}
+
+
