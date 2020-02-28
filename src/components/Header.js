@@ -12,7 +12,14 @@ class Header extends React.Component {
         });
     }
 
+    hideModal = () => {
+        this.setState({
+            showModal: false
+        });
+    }
+
     render() {
+        console.log("render - from Header");
         return (
             <React.Fragment>
             <nav className="navbar navbar-inverse">
@@ -28,7 +35,7 @@ class Header extends React.Component {
                     </li>
                 </ul>
             </nav>
-            <InfoEditModal addNew = {this.state.showModal}/>
+            <InfoEditModal addNew={this.state.showModal} onCloseModal={this.hideModal}/>
             </React.Fragment>
         );
     }

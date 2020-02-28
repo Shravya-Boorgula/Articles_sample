@@ -5,7 +5,7 @@ class InfoEditModal extends React.Component {
     // constructor(props) {
     //     super(props);
     //     this.state = {
-    //         modalShowHideClass : props.addNew ?  "modal fade modal-show" : "modal fade modal-hide"
+    //         modalShowHideClass : ""
     //     };
     // }
 
@@ -13,26 +13,21 @@ class InfoEditModal extends React.Component {
     //     modalShowHideClass: "modal fade modal-hide"
     // }
 
-    // showModal = () => {
-    //     this.setState({
-    //         modalShowHideClass: "modal fade modal-show"
-    //     });
-    // }
-
     // hideModal = () => {
     //     this.setState({
-    //         modalShowHideClass: "modal fade modal-hide"
+    //         modalShowHideClass: "modal-container modal-hide"
     //     });
     // }
 
     render() {
         let modalClass = this.props.addNew ?  "modal-container modal-show" : "modal-container modal-hide";
+        console.log("render - from Modal");
         return (
             <div className={modalClass}>
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
-                    <button type="button" className="close" >&times;</button>
+                    <button type="button" className="close" onClick={this.props.onCloseModal}>&times;</button>
                     <h4 className="modal-title">ARTICLE</h4>
                   </div>
                   <div className="modal-body">
@@ -43,8 +38,8 @@ class InfoEditModal extends React.Component {
                     <textarea className="data-entry" required/>
                   </div>
                   <div className="modal-footer">
-                    <button type="button" className="btn btn-default" >Save</button>
-                    <button type="button" className="btn btn-default" >Cancel</button>
+                    <button type="button" className="btn btn-default" onClick={this.props.onCloseModal}>Save</button>
+                    <button type="button" className="btn btn-default" onClick={this.props.onCloseModal}>Cancel</button>
                   </div>
                 </div>
               </div>
