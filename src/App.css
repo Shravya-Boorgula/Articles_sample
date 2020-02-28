@@ -61,4 +61,80 @@
   width: 100%;
 }
 
+body, html {
+  overflow-x: hidden;
+}
 
+.app-header {
+  display:block;
+  padding: 30px;
+}
+
+.app-title {
+  display:inline-block;
+  width: 100%;
+  margin: 80px 0 0 0;
+  float: left;
+  position:relative;
+  color:#fff;
+}
+
+.app-title h1 {
+  font-size: 52px;
+  margin: 0;
+}
+.app-title  p {
+  font-weight: 200;
+  opacity: .5;
+}
+
+.app-title-content {
+  position:relative;
+  top:50%;
+  left: 50%;
+  width:100%;
+  text-align:center;
+  transform:translate(-50%, -50%);
+  
+  @media(min-width:768px) {
+    width:auto;
+    position:absolute;
+    text-align:left;
+  }
+}
+
+.app-card-list {
+  display:inline-block;
+  width:100%;
+  float:right;
+  margin:0;
+  height: 600px;
+  white-space:normal;
+  overflow-x: scroll;
+  margin-top:-70px;
+}
+
+.app-card-list::-webkit-scrollbar { 
+  display: none; 
+}
+
+.app-card-list .card {
+  margin: 60px 30px;
+  display: inline-block;
+}
+
+.app-card-list .card .card-body {
+  white-space: normal;
+  border: 0.5px dotted rgb(168, 166, 166);
+  padding: 5px 0px;
+}
+
+.designer-link {
+  display:inline-block;
+  padding-top:40px;
+}
+
+.app-card-list .card, .app-card-list .card-header {
+  height: 400px;
+  background-repeat: no-repeat;
+}
