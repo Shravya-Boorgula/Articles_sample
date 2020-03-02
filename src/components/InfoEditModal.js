@@ -31,6 +31,13 @@ class InfoEditModal extends React.Component {
                     <h4 className="modal-title">ARTICLE</h4>
                   </div>
                   <div className="modal-body">
+                    <p>Category</p>
+                    <select className="browser-default custom-select data-entry" placeholder="select">
+                      <option value="travel">Travel</option>
+                      <option value="development">Programming</option>
+                      <option value="news">News</option>
+                    </select>
+                    <br></br>
                     <p>Title</p>
                     <input type='text' className="data-entry" required/>
                     <br></br>
