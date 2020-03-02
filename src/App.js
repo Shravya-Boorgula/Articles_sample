@@ -5,6 +5,14 @@ import Header from './components/Header';
 import ArticlesContainer from './components/ArticlesContainer';
 import './App.css';
 
+const mapStateToProps = (state) => ({
+  showModalToEdit: state.showModalToEdit
+});
+
+const mapDispatchToProps = (dispatch) => {
+
+}
+
 class App extends React.Component {
   constructor (props) {
     super (props);
@@ -36,4 +44,4 @@ class App extends React.Component {
   }
 }
 
-export default connect()(App);
+export default connect(mapStateToProps)(App);
