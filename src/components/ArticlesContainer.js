@@ -75,7 +75,7 @@ class CardBody extends React.Component {
 class Card extends React.Component {
     render() {
         return (
-            <article className="card">
+            <article className="card" >
                 <CardHeader email={this.props.details.email} title={this.props.details.name} />
                 <CardBody description={this.props.details.body} />
             </article>

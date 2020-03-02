@@ -1,6 +1,6 @@
 import React from 'react';
-import createStore from 'redux';
 import {Provider, connect} from 'react-redux';
+import store from './store/store';
 import Header from './components/Header';
 import ArticlesContainer from './components/ArticlesContainer';
 import './App.css';
@@ -15,12 +15,12 @@ class App extends React.Component {
   
   render () {
     return (
-      <div className="App">
-        <Header/>
-        {
+      <Provider store={store}>
+        <div className="App">
+          <Header/>
           <ArticlesContainer posts = {this.state.postData}/>
-        }
-      </div>
+        </div>
+      </Provider>
     );
   }
 
@@ -36,4 +36,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect()(App);
