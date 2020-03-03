@@ -1,33 +1,18 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {mapStateToProps, mapDispatchToProps} from '../mappingStateDispatch';
 
 class InfoEditModal extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         modalShowHideClass : ""
-    //     };
-    // }
-
-    // state = {
-    //     modalShowHideClass: "modal fade modal-hide"
-    // }
-
-    // hideModal = () => {
-    //     this.setState({
-    //         modalShowHideClass: "modal-container modal-hide"
-    //     });
-    // }
-
-    render() {
-        let modalClass = this.props.addNew ?  "modal-container modal-show" : "modal-container modal-hide";
+  render() {
+        let modalClass = this.props.showModalToEdit ?  "modal-container modal-show" : "modal-container modal-hide";
         console.log("render - from Modal");
         return (
             <div className={modalClass}>
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
-                    <button type="button" className="close" onClick={this.props.onCloseModal}>&times;</button>
+                    <button type="button" className="close" onClick={this.props.hideEditModal}>&times;</button>
                     <h4 className="modal-title">ARTICLE</h4>
                   </div>
                   <div className="modal-body">
@@ -45,8 +30,8 @@ class InfoEditModal extends React.Component {
                     <textarea className="data-entry" required/>
                   </div>
                   <div className="modal-footer">
-                    <button type="button" className="btn btn-default" onClick={this.props.onCloseModal}>Save</button>
-                    <button type="button" className="btn btn-default" onClick={this.props.onCloseModal}>Cancel</button>
+                    <button type="button" className="btn btn-default" onClick={this.props.hideEditModal}>Save</button>
+                    <button type="button" className="btn btn-default" onClick={this.props.hideEditModal}>Cancel</button>
                   </div>
                 </div>
               </div>
@@ -55,4 +40,4 @@ class InfoEditModal extends React.Component {
     }
 }
 
-export default InfoEditModal;
+export default connect(mapStateToProps, mapDispatchToProps)(InfoEditModal);

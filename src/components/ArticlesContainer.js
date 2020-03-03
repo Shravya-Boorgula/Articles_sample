@@ -1,13 +1,15 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
+import {mapStateToProps, mapDispatchToProps} from '../mappingStateDispatch';
 
 library.add(faTimes);
 
 class ArticlesContainer extends React.Component {
-    constructor() {
-        super();  
+    constructor(props) {
+        super(props);  
         this.state = {
           postData: {}
         }
@@ -27,7 +29,7 @@ class ArticlesContainer extends React.Component {
             {
               this.state.postData && Object
               .keys(this.state.postData)
-              .map(key => <Card key={key} index={key} details={this.state.postData[key]}/>)
+              .map(key => <Card key={key} index={key} details={this.state.postData[key]} doubleClick={this.props.showEditModal}/>)
             }
         </div>
         );
@@ -73,14 +75,19 @@ class CardBody extends React.Component {
 }
 
 class Card extends React.Component {
+
+    handleDoubleClick = () => {
+      this.props.doubleClick();
+    }
+
     render() {
         return (
-            <article className="card" >
-                <CardHeader email={this.props.details.email} title={this.props.details.name} />
+            <article className="card" onDoubleClick={this.handleDoubleClick}>
+                <CardHeader email={this.props.details.email} title={this.props.details.name}/>
                 <CardBody description={this.props.details.body} />
             </article>
         )
     }
 }
 
-export default ArticlesContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(ArticlesContainer);

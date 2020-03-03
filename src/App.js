@@ -1,17 +1,9 @@
 import React from 'react';
-import {Provider, connect} from 'react-redux';
-import store from './store/store';
+import {connect} from 'react-redux';
 import Header from './components/Header';
 import ArticlesContainer from './components/ArticlesContainer';
+import {mapStateToProps, mapDispatchToProps} from './mappingStateDispatch';
 import './App.css';
-
-const mapStateToProps = (state) => ({
-  showModalToEdit: state.showModalToEdit
-});
-
-const mapDispatchToProps = (dispatch) => {
-
-}
 
 class App extends React.Component {
   constructor (props) {
@@ -23,12 +15,10 @@ class App extends React.Component {
   
   render () {
     return (
-      <Provider store={store}>
         <div className="App">
           <Header/>
-          <ArticlesContainer posts = {this.state.postData}/>
+          <ArticlesContainer posts={this.state.postData}/>
         </div>
-      </Provider>
     );
   }
 
@@ -44,4 +34,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

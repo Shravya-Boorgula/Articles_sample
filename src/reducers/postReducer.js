@@ -13,6 +13,11 @@ const modifyPosts = (state = {}, action) => {
                 ...state,
                 showModalToEdit: true
             };
+        case "HIDE_MODAL": 
+            return {
+                ...state,
+                showModalToEdit: false
+            };
         default: 
         return state;
     }
