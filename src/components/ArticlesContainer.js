@@ -24,14 +24,25 @@ class ArticlesContainer extends React.Component {
 class Button extends React.Component {
   render() {
     return (
-      <button className="button button-primary">
-        <i className="fa fa-chevron-right"></i> Read more
-      </button>
+      <button className="button button-primary"> Read more </button>
     )
   }
 }
 
 class CardHeader extends React.Component {
+  onCloseClick = () => {
+    if(this.props.postsData) {
+      let deletePostIndex = -1;
+      let deletePost = this.props.postsData.find((post) => {
+        deletePostIndex++;
+        return post.id === this.props.id;
+      });
+      if(deletePost) {
+        this.props.deletePostData(this.props.postsData.splice(deletePostIndex, 1));
+      }
+    } 
+  }
+
   render() {
     const { email, title } = this.props;
     return (
@@ -40,7 +51,7 @@ class CardHeader extends React.Component {
           <h4 className="card-header-title">{title}</h4>
           <p>{email}</p>
         </div>
-        <div className="block-close">
+        <div className="block-close" onClick={this.onCloseClick}>
           <FontAwesomeIcon icon="times" />
         </div>
       </header>
@@ -68,7 +79,7 @@ class Card extends React.Component {
   render() {
     return (
       <article className="card" onDoubleClick={this.handleDoubleClick}>
-        <CardHeader email={this.props.details.email} title={this.props.details.name} />
+        <CardHeader email={this.props.details.email} title={this.props.details.name} id={this.props.details.id} />
         <CardBody description={this.props.details.body} />
       </article>
     )

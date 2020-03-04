@@ -22,6 +22,10 @@ export const mapDispatchToProps = (dispatch) => {
         addPostData: (latestPostsData) => dispatch({
             type: "ADD_POST",
             payload: latestPostsData
+        }),
+        deletePostData: (remaingPostsData) => dispatch({
+          type: "DELETE_POST",
+          payload: remaingPostsData
         })
     }
   };

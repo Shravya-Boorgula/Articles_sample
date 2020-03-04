@@ -2,15 +2,12 @@ const modifyPosts = (state = {}, action) => {
     switch (action.type) { 
         case "ADD_POST": 
         case "GET_POSTS": 
+        case "DELETE_POST": 
             return {
                 ...state,
                 postsData: action.payload
             };
         case "UPDATE_POST": 
-            return {
-                ...state
-            };
-        case "DELETE_POST": 
             return {
                 ...state
             };
