@@ -1,6 +1,7 @@
 export const mapStateToProps = (state) => ({
     postsData: state.postsData,
-    showModalToEdit: state.showModalToEdit
+    showModalToEdit: state.showModalToEdit,
+    storeSize: state.postsData ? state.postsData.length : 0
   });
   
 export const mapDispatchToProps = (dispatch) => {
@@ -14,9 +15,13 @@ export const mapDispatchToProps = (dispatch) => {
           .then(responseData => {
               dispatch({
                 type: "GET_POSTS",
-                payload: responseData
+                payload: responseData.slice(0,10)
               })
           })
-        }
+        },
+        addPostData: (latestPostsData) => dispatch({
+            type: "ADD_POST",
+            payload: latestPostsData
+        })
     }
   };
