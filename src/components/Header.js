@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import InfoEditModal from './InfoEditModal';
-import {mapStateToProps, mapDispatchToProps} from '../mappingStateDispatch';
+import {mapStateToProps, mapDispatchToProps} from '../mappingStateDispatchToProps';
 
 class Header extends React.Component {
     render() {

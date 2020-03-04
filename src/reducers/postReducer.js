@@ -1,10 +1,21 @@
 // import {updatePost, deletePost, createPost} from './actions/postActions';
 
 const modifyPosts = (state = {}, action) => {
-    switch (action.type) {
-        case "UPDATE_POST": 
-        case "DELETE_POST": 
+    switch (action.type) { 
         case "ADD_POST": 
+            return {
+                ...state
+            };
+        case "GET_POSTS": 
+            return {
+                ...state,
+                postsData: action.payload
+            };
+        case "UPDATE_POST": 
+            return {
+                ...state
+            };
+        case "DELETE_POST": 
             return {
                 ...state
             };
@@ -22,5 +33,4 @@ const modifyPosts = (state = {}, action) => {
         return state;
     }
 }
-
 export default modifyPosts;

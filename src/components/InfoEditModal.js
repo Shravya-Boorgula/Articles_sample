@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {mapStateToProps, mapDispatchToProps} from '../mappingStateDispatch';
+import {mapStateToProps, mapDispatchToProps} from '../mappingStateDispatchToProps';
 
 class InfoEditModal extends React.Component {
 

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
-import {mapStateToProps, mapDispatchToProps} from '../mappingStateDispatch';
+import {mapStateToProps, mapDispatchToProps} from '../mappingStateDispatchToProps';
 
 library.add(faTimes);
 
